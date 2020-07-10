@@ -88,7 +88,7 @@
 # print(f"I am printing {a} {b}")
 
 name = input("What is your name? \n")
-age = input("How old are you? \n")
+age = int(input("How old are you? \n"))
 sibling = input("How many siblings do you have? \n")
 dec_num = input("What is your favourite decimal number? \n")
 animal = input("What is your favourite animal? \n")
