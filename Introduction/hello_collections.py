@@ -80,20 +80,41 @@
 # print(my_dictionary.keys())
 # print(my_dictionary.values())
 
-data14_dictionary = {
-    "trainer": "David Harvey",
-    "location": "Birmingham",
-    "course": "data engineering",
-    "duration": "12 weeks",
-    "topics": ["business skills", "sql", "critical thinking", "agile", "python", "big data", "nosql", "cloud", "project"],
-    "schedule": {
-        "week 1": "Business week",
-        "week 2": "SQL"
-    },
-    "number of participants": "11"
+# data14_dictionary = {
+#     "trainer": "David Harvey",
+#     "location": "Birmingham",
+#     "course": "data engineering",
+#     "duration": "12 weeks",
+#     "topics": ["business skills", "sql", "critical thinking", "agile", "python", "big data", "nosql", "cloud", "project"],
+#     "schedule": {
+#         "week 1": "Business week",
+#         "week 2": "SQL"
+#     },
+#     "number of participants": "11"
+#
+# }
+#
+# print(data14_dictionary)
+#
+# print(data14_dictionary["topics"][4])
+# print(len(data14_dictionary["location"]))
 
-}
+# SET
+car_parts = {"wheels", "doors", "steering wheel"}
+print(car_parts)
+print(type(car_parts))
 
-print(data14_dictionary)
+# similar to lists but the order is randomised
+# i.e. sets are unordered lists
 
-print(data14_dictionary["topics"][4])
+car_parts.add("pedals")
+print(car_parts)
+
+car_parts.discard("doors")
+print(car_parts)
+
+# FROZEN SET
+fs = frozenset([1, 2, 3, 4])
+print(fs)
+
+# FROZEN SETS ARE IMMUTABLE - CANNOT BE CHANGED
