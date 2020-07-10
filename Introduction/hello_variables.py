@@ -120,16 +120,16 @@
 # print(hello.endswith("d"))
 # print(hello.startswith("h"))
 
-x = 0
-y = 1
-z = ""
-
-print(bool(x))
-print(bool(y))
-print(bool(z))
-
-print(True + True)
-
-n = None
-
-# Empty value like NULL in SQL but None == None in python.
+# x = 0
+# y = 1
+# z = ""
+#
+# print(bool(x))
+# print(bool(y))
+# print(bool(z))
+#
+# print(True + True)
+#
+# n = None
+#
+# # Empty value like NULL in SQL but None == None in python.
