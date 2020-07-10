@@ -87,10 +87,49 @@
 #
 # print(f"I am printing {a} {b}")
 
-name = input("What is your name? \n")
-age = int(input("How old are you? \n"))
-sibling = input("How many siblings do you have? \n")
-dec_num = input("What is your favourite decimal number? \n")
-animal = input("What is your favourite animal? \n")
+# name = input("What is your name? \n")
+# age = int(input("How old are you? \n"))
+# sibling = input("How many siblings do you have? \n")
+# dec_num = input("What is your favourite decimal number? \n")
+# animal = input("What is your favourite animal? \n")
+#
+# print(f"My name is {name}, I am {age} years old and I have {sibling} siblings. My favourite decimal number is {dec_num} and my favourite animal is {animal}")
 
-print(f"My name is {name}, I am {age} years old and I have {sibling} siblings. My favourite decimal number is {dec_num} and my favourite animal is {animal}")
+# a = True
+# b = False
+#
+# print(a == b)
+# print(a != b)
+# print(a > b)
+#
+# age = 19
+# weather = "sunny"
+#
+# print (age > 18 and weather == "sunny")
+
+# .isalpha() are all characters in the alphabet
+# .islower() is it all in lower
+# .isupper() is it all in upper
+# .endswith(x) does it end with x?
+# .startswith(x) does it start with x?
+
+# hello = "hello world"
+# print(hello.isalpha())
+# print(hello.islower())
+# print(hello.isupper())
+# print(hello.endswith("d"))
+# print(hello.startswith("h"))
+
+x = 0
+y = 1
+z = ""
+
+print(bool(x))
+print(bool(y))
+print(bool(z))
+
+print(True + True)
+
+n = None
+
+# Empty value like NULL in SQL but None == None in python.
