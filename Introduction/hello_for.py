@@ -29,12 +29,12 @@
 # chinese_menu
 
 chinese_menu = {
-    1: {'dish': 'egg fried rice', 'price': "1.60"},
-    2: {'dish': 'egg and sweetcorn soup', 'price': "2.40"},
-    3: {'dish': 'sweet and sour chicken', 'price': "3.50"},
-    4: {'dish': 'prawn crackers', 'price': "1.00"}
+    1: {'dish': 'egg fried rice', 'price': 1.60},
+    2: {'dish': 'egg and sweetcorn soup', 'price': 2.40},
+    3: {'dish': 'sweet and sour chicken', 'price': 3.50},
+    4: {'dish': 'prawn crackers', 'price': 1.00}
 
 }
 
 for key in chinese_menu:
-    print(f"{chinese_menu[key]['dish']} costs £{chinese_menu[key]['price']}")
+    print(f"{chinese_menu[key]['dish']} costs £{chinese_menu[key]['price']:.2f}")
