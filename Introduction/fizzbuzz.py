@@ -18,16 +18,11 @@ while counter < limit:
         print(counter)
     counter += 1
 
-# end at 100
+# change where it is fizz, buzz and fizzbuzz
+# make it an interactive game, change the numbers, fizz, buzz and fizzbuzz to something else
 
-# if divisible by 3, instead of a number, "fizz"
-# if divisible by 5, instead of a number, "buzz"
-# if divisible by 3 and 5, instead of a number, "fizzbuzz"
 
-# accept user input for number to count up to
-# accept user input for number to start from
-
-# accept user input for custom fizz buzz?
-# change the number we increment by?
+# accept user input for custom fizz buzz? done
+# change the number we increment by? done
 # change the values of fizz and buzz?
 
