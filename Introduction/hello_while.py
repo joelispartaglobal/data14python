@@ -22,4 +22,4 @@ while not age_input.isnumeric():
 age = int(age_input)
 
 
-print("You are" + ' ' + str(age))
+# print("You are" + ' ' + str(age))
