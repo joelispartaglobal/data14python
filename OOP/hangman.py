@@ -35,25 +35,35 @@ while reattempt:
 
     # Create a list for guessed and incorrect
     guess = []
+    wrong = []
+    answer = ''
+    # Need to somehow make answer as a list
 
     while tries > 0:
+
         guess = input("Please guess a letter. \n")
-        out = ''
         if guess.lower() in random_word.lower():
             print("Good job")
-            out += guess
-            print(out)
+            answer += guess
+            print(answer)
         else:
             print("Incorrect, try again")
             print(f"You have {tries - 1} tries left")
-            out += underscore
-            print(out + underscore)
             tries -= 1
 
-        if out.lower() == random_word.lower():
+        if answer.lower() == random_word.lower():
             print("Congratulations, you have guessed correctly!")
             print("The word is:")
-            print(out)
+            print(random_word)
+            print("Do you want to play again?")
+            reattempt = input("Type Yes/No \n")
+            if reattempt.lower() == "yes":
+                reattempt = True
+                break
+            else:
+                print("Goodbye")
+                reattempt = False
+                break
 
     if tries == 0:
         print("Game over, do you want to try again?")
