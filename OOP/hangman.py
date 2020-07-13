@@ -1,11 +1,14 @@
 from hangman_words import word_list
 import random
 
+def findoccurrences(s, ch):
+    return [i for i, letter in enumerate(s) if letter == ch]
+
 reattempt = True
 while reattempt:
     # Select a random word from the word list
-    # random.choice(word_list)
-    random_choice = "list"
+    random_choice = random.choice(word_list).lower()
+    random_choice_list = list(random_choice)
 
     random_word = random_choice
     # Preload the length of the word
@@ -26,42 +29,40 @@ while reattempt:
     if confirm.lower() == "yes":
         # Guess the word
         print("Here is your word to guess")
-        print(underscore)
+        print(list(underscore))
     else:
         print("Goodbye")
         break
 
-    # 2) It will tell you to guess a letter
-    # 3a) If it is correct, it will replace an underscore with the appropriate letter
-
-    # Create a list for guessed and incorrect
-    guessed = []
-    wrong = []
+    # Create an empty string for the answer
     answer = ''
 
-    # Need to somehow make answer as a list
-    # Be able to compensate for multiple letters
-    # If guessed correctly but not in correct order, should be in correct order
+    # Hangman game in while loop
 
     while tries > 0:
 
         guess = input("Please guess a letter. \n")
-        if guess.lower() in random_word.lower():
-            print("Good job")
-            answer += guess
-            guessed.append(guess)
+        if len(guess) > 1:
+            print("Stop cheating")
+        elif guess.isnumeric():
+            print("Please do not guess numbers")
+        elif guess.lower() in random_word.lower():
+            print("Good job, you guessed a letter correctly")
+            index = findoccurrences(random_choice_list, guess)
+            underscore = list(underscore)
+            for i in index:
+                underscore[i] = guess
+            print(underscore)
             print(answer)
         else:
-            answer += "_"
             print("Incorrect, try again")
             print(f"You have {tries - 1} tries left")
-            wrong.append(guess)
             tries -= 1
 
-        if answer.lower() == random_word.lower():
+        if underscore == random_choice_list:
             print("Congratulations, you have guessed correctly!")
             print("The word is:")
-            print(random_word)
+            print(random_word.upper())
             print("Do you want to play again?")
             reattempt = input("Type Yes/No \n")
             if reattempt.lower() == "yes":
