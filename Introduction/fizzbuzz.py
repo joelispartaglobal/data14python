@@ -39,14 +39,14 @@ while not second_val.isnumeric():
 
 # Print each number in turn
 
-while int(counter) < int(limit):
-    if int(counter) % int(first_val) == 0 and int(counter) % int(second_val) == 0:
+while counter < int(limit):
+    if counter % int(first_val) == 0 and counter % int(second_val) == 0:
         print(fizz + ' ' + buzz)
-    elif int(counter) % int(first_val) == 0:
+    elif counter % int(first_val) == 0:
         print(fizz)
-    elif int(counter) % int(second_val) == 0:
+    elif counter % int(second_val) == 0:
         print(buzz)
-    elif int(counter) == limit:
+    elif counter == limit:
         break
     else:
         print(counter)
