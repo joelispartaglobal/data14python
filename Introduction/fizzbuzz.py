@@ -1,8 +1,22 @@
 # FIZZBUZZ
 # start at 1
-counter = int(input("Where do you want to start from: \n"))
+counter = ''
+limit = ''
+
+
+while not counter.isnumeric():
+    counter = input("What do you want your counter value to be? \n")
+    if not counter.isnumeric():
+        print("That's not a number, try again")
+
 counter_text = input("What do you want the counter text to be? \n")
-limit = int(input("Please input your limit: \n"))
+
+while not limit.isnumeric():
+    limit = input("What do you want your limit value to be? \n")
+    if not limit.isnumeric():
+        print("That's not a number, try again")
+
+
 fizz = input("What do you want 'Fizz' to be? \n")
 buzz = input("What do you want 'Buzz' to be? \n")
 
@@ -21,14 +35,14 @@ while not second_val.isnumeric():
 
 # print each number in turn
 
-while counter < limit:
-    if counter % int(first_val) == 0 and counter % int(second_val) == 0:
+while int(counter) < int(limit):
+    if int(counter) % int(first_val) == 0 and counter % int(second_val) == 0:
         print(fizz + ' ' + buzz)
-    elif counter % int(first_val) == 0:
+    elif int(counter) % int(first_val) == 0:
         print(fizz)
-    elif counter % int(second_val) == 0:
+    elif int(counter) % int(second_val) == 0:
         print(buzz)
-    elif counter == limit:
+    elif int(counter) == int(limit):
         break
     else:
         print(counter_text)
