@@ -46,6 +46,7 @@
 
 
 def find_product(*multiargs):
+    # Return the product (all numbers multiplied together)
     if len(multiargs) < 1:
         return None
     else:
