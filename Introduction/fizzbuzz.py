@@ -1,4 +1,8 @@
-# FIZZBUZZ
+
+# We want to create a function for Fizzbuzz
+# There will be multiple parameters for the function
+# The function will take all these parameters and set them as the arguments for each part of the program.
+
 
 # NULL values
 counter_value = ''
@@ -53,11 +57,5 @@ while counter < int(limit):
     counter += 1
 
 
-# change where it is fizz, buzz and fizzbuzz done
-# make it an interactive game, change the numbers, fizz, buzz and fizzbuzz to something else done
 
-
-# accept user input for custom fizz buzz? done
-# change the number we increment by? done
-# change the values of fizz and buzz?
 
