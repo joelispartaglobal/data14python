@@ -45,15 +45,23 @@
 #         print(num)
 
 
-def find_product(*multiargs):
-    # Return the product (all numbers multiplied together)
-    if len(multiargs) < 1:
-        return None
-    else:
-        product = 1
-        for num in multiargs:
-            product *= num
-        return product
+# def find_product(*multiargs):
+#     # Return the product (all numbers multiplied together)
+#     if len(multiargs) < 1:
+#         return None
+#     else:
+#         product = 1
+#         for num in multiargs:
+#             product *= num
+#         return product
+#
+#
+# print(find_product(1, 2, 3, 4, 5))
+
+# We can give Python hints on what the type will be
+def repeat_string(string_to_repeat: str, number_of_repeats: int = 3) -> str:
+    string_to_return = string_to_repeat * number_of_repeats
+    return string_to_return
 
 
-print(find_product(1, 2, 3, 4, 5))
+print(repeat_string("Woohoo!", 4))
