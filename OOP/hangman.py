@@ -4,7 +4,8 @@ import random
 reattempt = True
 while reattempt:
     # Select a random word from the word list
-    random_choice = random.choice(word_list)
+    # random.choice(word_list)
+    random_choice = "list"
 
     random_word = random_choice
     # Preload the length of the word
@@ -34,10 +35,13 @@ while reattempt:
     # 3a) If it is correct, it will replace an underscore with the appropriate letter
 
     # Create a list for guessed and incorrect
-    guess = []
+    guessed = []
     wrong = []
     answer = ''
+
     # Need to somehow make answer as a list
+    # Be able to compensate for multiple letters
+    # If guessed correctly but not in correct order, should be in correct order
 
     while tries > 0:
 
@@ -45,10 +49,13 @@ while reattempt:
         if guess.lower() in random_word.lower():
             print("Good job")
             answer += guess
+            guessed.append(guess)
             print(answer)
         else:
+            answer += "_"
             print("Incorrect, try again")
             print(f"You have {tries - 1} tries left")
+            wrong.append(guess)
             tries -= 1
 
         if answer.lower() == random_word.lower():
