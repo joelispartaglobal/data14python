@@ -3,7 +3,7 @@
 # There will be multiple parameters for the function
 # The function will take all these parameters and set them as the arguments for each part of the program.
 
-def fb_function(counter_value_input, limit_input, fizz_input, buzz_input, first_val_input, second_val_input):
+def fb_function(counter_value_input, limit_input, increment_input, fizz_input, buzz_input, first_val_input, second_val_input):
 
     # # NULL values
     # counter_value = ''
@@ -56,9 +56,11 @@ def fb_function(counter_value_input, limit_input, fizz_input, buzz_input, first_
             break
         else:
             print(counter_value_input)
-        counter_value_input += 1
+        counter_value_input += increment_input
+        if counter_value_input + increment_input > limit_input:
+            counter_value_input = limit_input
 
 
-# def fb_function(counter_value, limit, fizz, buzz, first_val, second_val):
-print(fb_function(1, 100, "fizz", "buzz", 3, 5))
+# def fb_function(counter_value_input, limit_input, increment_input, fizz_input, buzz_input, first_val_input, second_val_input):
+print(fb_function(1, 100, 2, "fizz", "buzz", 3, 5))
 
