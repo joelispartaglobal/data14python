@@ -10,7 +10,7 @@ limit = ''
 counter = ''
 
 # Starting counter value
-while not counter_value.isnumeric():
+while counter_value.isnumeric():
     counter_value = input("What do you want your starting counter value to be? \n")
     counter = int(counter_value)
     if not counter_value.isnumeric():
@@ -18,7 +18,7 @@ while not counter_value.isnumeric():
 
 
 # Limit value
-while not limit.isnumeric():
+while limit.isnumeric():
     limit = input("What do you want your limit value to be? \n")
     if not limit.isnumeric():
         print("That's not a number, try again")
@@ -31,12 +31,12 @@ buzz = input("What do you want 'Buzz' to be? \n")
 first_val = ''
 second_val = ''
 
-while not first_val.isnumeric():
+while first_val.isnumeric():
     first_val = input("What do you want your first divisive value to be? \n")
     if not first_val.isnumeric():
         print("That's not a number, try again")
 
-while not second_val.isnumeric():
+while second_val.isnumeric():
     second_val = input("What do you want your second divisive value to be? \n")
     if not second_val.isnumeric():
         print("That's not a number, try again")
