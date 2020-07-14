@@ -45,7 +45,7 @@ while reattempt:
     while tries > 0:
 
         guess = input("Please guess a letter. \n")
-        if len(guess) > 1:
+        if 0 < len(guess) > 1:
             print("Stop cheating")
         elif guess.isnumeric():
             print("Please do not guess numbers")
