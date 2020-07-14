@@ -10,7 +10,7 @@ class Game:
 
     def __init__(self):
         print(chosen_word)  # Remember to delete
-        print("Hello there \n")
+        print("Hello! Welcome to hangman! \n")
         self.reattempt = ''
         self._underscore = list("_" * len(chosen_word))
         self._confirm = ''
@@ -22,13 +22,16 @@ class Game:
 
     # Method to ask the user to confirm if they want to play
     def play(self):
-        self._confirm = input("Do you want to play? Type either 'yes' or 'no' \n ")
-        if self._confirm.lower() == "yes":
-            # Guess the word
-            print("Here is your word to guess")
-            print(len(chosen_word) * "_")
-        else:
-            print("Goodbye")
+        while self._confirm == '':
+            self._confirm = input("Do you want to play? Type either 'yes' or 'no' \n ")
+            if self._confirm.lower() == "yes":
+                # Guess the word
+                print("Here is your word to guess")
+                print(len(chosen_word) * "_")
+            elif self._confirm.lower() == "no":
+                print("Goodbye")
+            elif self._confirm != "yes" or self._confirm != "no":
+                print("Please input yes or no.")
 
     # Turn underscore into a list so it can be compared to
     def underscore_list(self):
@@ -69,19 +72,10 @@ class Game:
                     print(f"You have {self.tries - 1} tries left")
                     self.tries -= 1
 
-    # Create a method to congratulate the user for guessing correctly
-    # def congrats(self):
-    #     while self.tries > 0:
-    #         if self.guess == chosen_word:
-    #             print("Congratulations, you have guessed correctly!")
-    #             print("The word is:")
-    #             print(chosen_word.upper())
-
+    # Create a method for when the user fails
     def fail(self):
         if self.tries == 0:
             print("You have lost. \n Goodbye.")
-
-
 
 
 try_game = Game()
