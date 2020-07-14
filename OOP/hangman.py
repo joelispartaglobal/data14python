@@ -58,6 +58,7 @@ while reattempt:
             for i in index:
                 underscore[i] = guess
             print(underscore)
+
         else:
             # If guess is incorrect
             # Minus one try from tries
