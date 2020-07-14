@@ -16,6 +16,8 @@ class Brain:
     def __init__(self):  # Initialisation (runs on instantiation)
         self.__word = random.choice(word_list)
         self.length = len(self.__word)
+        self.word_list()
+        self.get_word()
 
     def word_list(self):
         return list(self.__word)

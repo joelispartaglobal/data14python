@@ -1,6 +1,5 @@
 import brain_class as bc
 # Import word from brain class
-from hangman import guess
 
 chosen_word = bc.chosen_word.get_word()
 
@@ -13,22 +12,17 @@ class Game:
         print(chosen_word)  # Remember to delete
         print("Hello there \n")
         self.reattempt = ''
-        self._underscore = ''
+        self._underscore = list("_" * len(chosen_word))
         self._confirm = ''
+        self.underscore_list()
         self.chosen_word = bc.chosen_word.get_word()
         self.play()
         self.hangman_guess()
-        self.congrats()
         self.fail()
-        # self.congrats()
-
-    def start(self):
-        print("something")
-        self.play()
 
     # Method to ask the user to confirm if they want to play
     def play(self):
-        self._confirm = input("Do you want to play? Type either 'yes' or 'no' ")
+        self._confirm = input("Do you want to play? Type either 'yes' or 'no' \n ")
         if self._confirm.lower() == "yes":
             # Guess the word
             print("Here is your word to guess")
@@ -50,45 +44,44 @@ class Game:
         if self._confirm.lower() == "yes":
             while self.tries > 0:
                 guess_input = input("Please guess a letter. \n")
-                if 0 < len(guess_input) > 1:
+                if len(guess_input) > 1:
                     print("Stop cheating")
+                elif guess_input != guess_input.isalpha():
+                    print("Enter a letter")
                 elif guess_input.isnumeric():
                     print("Please do not guess numbers")
+
                 # If we guess the letter correctly
                 if guess_input in chosen_word.lower():
                     print("Good job, you guessed a letter correctly")
-                    guess.append(guess_input)
-                    index = self.findoccurrences(chosen_word, guess)
-                    self._underscore = list(chosen_word)
+                    self.guess.append(guess_input)
+                    index = self.findoccurrences(chosen_word, guess_input)
                     for i in index:
-                        self._underscore[i] = chosen_word
-                        print(self._underscore)
+                        self._underscore[i] = guess_input
+                    print(self._underscore)
+                    if self._underscore == list(chosen_word):
+                        print("Congratulations, you have guessed correctly!")
+                        print("The word is:")
+                        print(chosen_word.upper())
+                        quit()
                 else:
                     print("Incorrect, try again \n")
                     print(f"You have {self.tries - 1} tries left")
                     self.tries -= 1
 
     # Create a method to congratulate the user for guessing correctly
-    def congrats(self):
-        if self.tries > 0:
-            if self.guess == chosen_word:
-                print("Congratulations, you have guessed correctly!")
-                print("The word is:")
-                print(chosen_word.upper())
+    # def congrats(self):
+    #     while self.tries > 0:
+    #         if self.guess == chosen_word:
+    #             print("Congratulations, you have guessed correctly!")
+    #             print("The word is:")
+    #             print(chosen_word.upper())
 
     def fail(self):
         if self.tries == 0:
             print("You have lost. \n Goodbye.")
 
-    # # Create a method to allow the user to restart the game
-    # def restart_game(self):
-    #     print("Do you want to play again?")
-    #     reattempt = input("Type Yes/No \n")
-    #     if reattempt.lower() == "yes":
-    #         self.reattempt = True
-    #     else:
-    #         print("Goodbye")
-    #         self.reattempt = False
+
 
 
 try_game = Game()
