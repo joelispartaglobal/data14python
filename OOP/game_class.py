@@ -9,7 +9,7 @@ class Game:
     guess = []
 
     def __init__(self):
-        print(chosen_word)  # Remember to delete
+        # print(chosen_word)  # Remember to delete
         print("Hello! Welcome to hangman! \n")
         self.reattempt = ''
         self._underscore = list("_" * len(chosen_word))
@@ -22,16 +22,19 @@ class Game:
 
     # Method to ask the user to confirm if they want to play
     def play(self):
-        while self._confirm == '':
+        while True:
             self._confirm = input("Do you want to play? Type either 'yes' or 'no' \n ")
             if self._confirm.lower() == "yes":
                 # Guess the word
                 print("Here is your word to guess")
                 print(len(chosen_word) * "_")
+                break
             elif self._confirm.lower() == "no":
                 print("Goodbye")
+                break
             elif self._confirm != "yes" or self._confirm != "no":
                 print("Please input yes or no.")
+
 
     # Turn underscore into a list so it can be compared to
     def underscore_list(self):
