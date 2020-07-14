@@ -35,7 +35,6 @@ class Game:
             elif self._confirm != "yes" or self._confirm != "no":
                 print("Please input yes or no.")
 
-
     # Turn underscore into a list so it can be compared to
     def underscore_list(self):
         return list(self._underscore)
@@ -78,7 +77,10 @@ class Game:
     # Create a method for when the user fails
     def fail(self):
         if self.tries == 0:
-            print("You have lost. \n Goodbye.")
+            print("You have lost.")
+            print("The word is actually:")
+            print(chosen_word.upper())
+            print("Goodbye")
 
 
 try_game = Game()
