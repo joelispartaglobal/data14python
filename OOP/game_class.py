@@ -1,11 +1,13 @@
 import brain_class as bc
 # Import word from brain class
+from hangman import guess
+
 chosen_word = bc.chosen_word.get_word()
 
 class Game:
     # Initialise method to welcome the user
     tries = 7
-    guess = ''
+    guess = []
 
     def __init__(self):
         print(chosen_word)  # Remember to delete
@@ -16,6 +18,8 @@ class Game:
         self.chosen_word = bc.chosen_word.get_word()
         self.play()
         self.hangman_guess()
+        self.congrats()
+        self.fail()
         # self.congrats()
 
     def start(self):
@@ -50,23 +54,24 @@ class Game:
                     print("Stop cheating")
                 elif guess_input.isnumeric():
                     print("Please do not guess numbers")
+                # If we guess the letter correctly
                 if guess_input in chosen_word.lower():
                     print("Good job, you guessed a letter correctly")
-                    self.guess += guess_input
-                    index = self.findoccurrences(chosen_word, self.hangman_guess())
+                    guess.append(guess_input)
+                    index = self.findoccurrences(chosen_word, guess)
                     self._underscore = list(chosen_word)
                     for i in index:
-                        self._underscore[i] = self.guess
+                        self._underscore[i] = chosen_word
                         print(self._underscore)
                 else:
-                    print("Incorrect, try again")
+                    print("Incorrect, try again \n")
                     print(f"You have {self.tries - 1} tries left")
                     self.tries -= 1
 
     # Create a method to congratulate the user for guessing correctly
     def congrats(self):
-        while self.tries > 0:
-            if self._underscore == chosen_word:
+        if self.tries > 0:
+            if self.guess == chosen_word:
                 print("Congratulations, you have guessed correctly!")
                 print("The word is:")
                 print(chosen_word.upper())
