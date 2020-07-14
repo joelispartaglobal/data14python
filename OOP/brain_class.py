@@ -23,5 +23,6 @@ class Brain:
     def get_word(self):
         return self.__word.lower()
 
+    
 
 winning_word = Brain()
