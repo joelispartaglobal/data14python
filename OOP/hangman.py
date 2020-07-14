@@ -20,7 +20,7 @@ while reattempt:
 
     # Create the amount of underscores based on the length of the word
     underscore = '_' * word_len
-    print(random_word)   # Remember to delete this
+    # print(random_word)   # Remember to delete this
 
     # How many chances of getting it correct
     tries = 7
