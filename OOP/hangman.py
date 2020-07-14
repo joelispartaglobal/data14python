@@ -1,16 +1,20 @@
 from hangman_words import word_list
 import random
 
+# Function so that if we guess a letter correctly, it will place that letter in the
+# Respective place in the list
 def findoccurrences(s, ch):
     return [i for i, letter in enumerate(s) if letter == ch]
 
+# Reattempt allows the game to be played in a loop
 reattempt = True
 while reattempt:
+
     # Select a random word from the word list
     random_choice = random.choice(word_list).lower()
     random_choice_list = list(random_choice)
-
     random_word = random_choice
+
     # Preload the length of the word
     word_len = len(random_word)
 
@@ -38,7 +42,6 @@ while reattempt:
     answer = ''
 
     # Hangman game in while loop
-
     while tries > 0:
 
         guess = input("Please guess a letter. \n")
@@ -47,17 +50,24 @@ while reattempt:
         elif guess.isnumeric():
             print("Please do not guess numbers")
         elif guess.lower() in random_word.lower():
+            # If correct guess
+            # Find where the letter occurs in the word
             print("Good job, you guessed a letter correctly")
             index = findoccurrences(random_choice_list, guess)
             underscore = list(underscore)
             for i in index:
                 underscore[i] = guess
             print(underscore)
-            print(answer)
         else:
+            # If guess is incorrect
+            # Minus one try from tries
+
             print("Incorrect, try again")
             print(f"You have {tries - 1} tries left")
             tries -= 1
+
+        # When guessed correctly display the word
+        # Enquire if they want to play again
 
         if underscore == random_choice_list:
             print("Congratulations, you have guessed correctly!")
@@ -72,7 +82,8 @@ while reattempt:
                 print("Goodbye")
                 reattempt = False
                 break
-
+    # If game over
+    # Do they want to reattempt
     if tries == 0:
         print("Game over, do you want to try again?")
         reattempt = input("Type Yes/No \n")
@@ -81,8 +92,3 @@ while reattempt:
         else:
             print("Goodbye")
             reattempt = False
-
-# 3b) If it is wrong, you will get a message and one part of the hangman will be drawn
-# When one of two conditions have been met done
-# 4a) Successfully completed the word, you will be congratulated and asks if you want to play again
-# 4b) Failed, and asks you if you want to play again
