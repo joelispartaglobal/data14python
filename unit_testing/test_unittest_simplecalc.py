@@ -10,7 +10,7 @@ class Calctests(unittest.TestCase):
         self.assertEqual(self.calc.add(-4, -10), -14)
         self.assertEqual(self.calc.add(-3, 5), 2)
         self.assertEqual(self.calc.add(7, -1), 6)
-        self.assertIsNone(self.calc.add(0, 0), 0)
+        self.assertIsNotNone(self.calc.add(0, 0))
 
     def test_sub(self):
         self.assertEqual(self.calc.subtract(4, 2), 2)
@@ -18,7 +18,7 @@ class Calctests(unittest.TestCase):
         self.assertEqual(self.calc.subtract(2, -2), 4)
         self.assertEqual(self.calc.subtract(-20, 2), -22)
         self.assertEqual(self.calc.subtract(4, 2), 2)
-        self.assertIsNone(self.calc.subtract(0, 0), 0)
+        self.assertIsNotNone(self.calc.subtract(0, 0))
 
     def test_multiply(self):
         self.assertEqual(self.calc.multiply(2, 3), 6)
@@ -26,13 +26,13 @@ class Calctests(unittest.TestCase):
         self.assertEqual(self.calc.multiply(-6, -1), 6)
         self.assertEqual(self.calc.multiply(-3, 3), -9)
         self.assertEqual(self.calc.multiply(1, -4), -4)
-        self.assertIsNone(self.calc.multiply(0, 0), 0)
+        self.assertIsNotNone(self.calc.multiply(0, 0))
 
     def test_div(self):
         self.assertEqual(self.calc.divide(6, 2), 3)
         self.assertEqual(self.calc.divide(3, -2), -1.5)
         self.assertEqual(self.calc.divide(-9, -3), 3)
         self.assertEqual(self.calc.divide(-5, 5), -1)
-        self.assertIsNone(self.calc.divide(0, 5), 0)
+        self.assertIsNotNone(self.calc.divide(0, 1))
         # self.assertEqual(self.calc.divide(1, 0), "Undefined")
         # self.assertEqual(self.calc.divide(0, 0), "Undefined")
