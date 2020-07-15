@@ -20,8 +20,8 @@ class Game:
         self.hangman_guess()
         self.fail()
 
-    # Method to ask the user to confirm if they want to play
     def play(self):
+        # Method to ask the user to confirm if they want to play
         while True:
             self._confirm = input("Do you want to play? Type either 'yes' or 'no' \n ")
             if self._confirm.lower() == "yes":
@@ -35,13 +35,13 @@ class Game:
             elif self._confirm != "yes" or self._confirm != "no":
                 print("Please input yes or no.")
 
-    # Turn underscore into a list so it can be compared to
     def underscore_list(self):
+        # Turn underscore into a list so it can be compared to
         return list(self._underscore)
 
     # Main body of the game
-    # Method to find occurrences letters
     def findoccurrences(self, s, ch):
+        # Method to find occurrences letters
         return [i for i, letter in enumerate(s) if letter == ch]
 
     # Hangman game
@@ -49,6 +49,7 @@ class Game:
         if self._confirm.lower() == "yes":
             while self.tries > 0:
                 guess_input = input("Please guess a letter. \n")
+                # Make sure the user inputs correctly
                 if len(guess_input) > 1:
                     print("Stop cheating")
                 elif guess_input != guess_input.isalpha():
@@ -56,7 +57,7 @@ class Game:
                 elif guess_input.isnumeric():
                     print("Please do not guess numbers")
 
-                # If we guess the letter correctly
+                # If the user guess the letter correctly
                 if guess_input in chosen_word.lower():
                     print("Good job, you guessed a letter correctly")
                     self.guess.append(guess_input)
@@ -69,13 +70,14 @@ class Game:
                         print("The word is:")
                         print(chosen_word.upper())
                         quit()
+                # If the user guesses incorrectly
                 else:
                     print("Incorrect, try again \n")
                     print(f"You have {self.tries - 1} tries left")
                     self.tries -= 1
 
-    # Create a method for when the user fails
     def fail(self):
+        # Create a method for when the user fails
         if self.tries == 0:
             print("You have lost.")
             print("The word is actually:")
