@@ -51,12 +51,13 @@
 def append_to_file(filename, order):
     try:
         with open(filename, "a") as opened_file:
-            opened_file.write(order)
+            opened_file.write(order + '\n')
 
-    except FileNotFoundError:
-        print("File cannot be found, please check filename provided")
-        raise
+    except TypeError:
+        print("Order needs to be a string. Please try again.")
+
 
 append_to_file("order.txt", "pasta")
 append_to_file("order.txt", "hotdog")
 append_to_file("order.txt", "kebab")
+append_to_file("new_order.txt", "pizza")
