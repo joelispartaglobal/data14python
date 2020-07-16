@@ -1,0 +1,12 @@
+{
+  "film_name": "lion king",
+  "year": "1994",
+  "studio": "Walt Disney",
+  "length" : "88 minutes",
+
+  "rating": {
+    "rotten tomato": "93%",
+    "imdb": "8.39/10"
+  }
+
+   }
