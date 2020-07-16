@@ -36,8 +36,10 @@ import csv
 
 def new_iris_csv(new_iris_csv):
     with open(new_iris_csv, "w", newline="\n") as opened_csv:
+        # Adding a row as "headers" for the new csv"
         data_to_write = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
         csv_writer = csv.writer(opened_csv)
+        # New with statement from previous question to calculate the means
         with open("iris.csv") as iris_csv:
             # need to set it as a list
             csv_reader = list(csv.reader(iris_csv))
@@ -54,6 +56,7 @@ def new_iris_csv(new_iris_csv):
                 mean = sum / (len(list(csv_reader)))
                 mean_of_columns.append(mean)
             mean_of_columns_2 = mean_of_columns
+        # Write both rows into a new csv
         csv_writer.writerow([f] for f in data_to_write)
         csv_writer.writerow([g] for g in mean_of_columns_2)
 
