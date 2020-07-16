@@ -17,8 +17,10 @@ class ScrabbleGame:
     def tilegeneration(self):
         return rand.sample(list(score), 7)
 
+
     def choose_word(self):
         return rand.choice(list(words))
+
 
     def scrabblescore(self, word):
         total = 0
@@ -26,5 +28,17 @@ class ScrabbleGame:
             total += score[i.lower()]
         return total
 
+# tile_store = []
+# player_tiles = tiles
+# word_list = list(words[1])
+#
+# for tile in word_list:
+#     if tile in player_tiles:
+#         tile_store.append(tile)
+#
+# player_tiles = tiles
+# word_list = list(words[1])
+#
+# tile_remaining = [tile for tile in tiles if tile not in tile_store]
+# print(tile_remaining)
 
-test = ScrabbleGame()
