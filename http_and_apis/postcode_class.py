@@ -1,12 +1,13 @@
 import requests
 import json
 
+
 class Postcode:
 
     def __init__(self):
         self.dict_body = {'postcodes': ["B7 4BB"]}
         self.json_body = json.dumps(self.dict_body)
-        self. headers = {'Content-Type': 'application/json'}
+        self.headers = {'Content-Type': 'application/json'}
         self.address = "https://api.postcodes.io/postcodes/"
         self.req_response = requests.post(self.address, headers=self.headers, data=self.json_body)
 
@@ -18,7 +19,8 @@ class Postcode:
     def post_details(self):
         for postcode in self.req_response.json()['result']:
             result = postcode['result']
-            print(f"Postcode: {result['postcode']}; Eastings: {result['eastings']};\ Northings: {result['northings']}; NUTS code: {result['codes']['nuts']}")
+            print(f"Postcode: {result['postcode']}; Eastings: {result['eastings']}; "
+                  f"Northings: {result['northings']}; NUTS code: {result['codes']['nuts']}")
 
 
 if __name__ == "__main__":
@@ -32,4 +34,4 @@ if __name__ == "__main__":
 # You can make an iterative method
 # One thing in python is that it cannot dynamically assign variables
 # we could create a dictionary instead
-# 
+#
