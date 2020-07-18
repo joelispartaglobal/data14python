@@ -17,12 +17,28 @@ date_since = "2018-11-16"
 
 
 # Collect tweets
-tweets = tw.Cursor(api.search,
-              q=search_words,
-              lang="en",
-              since=date_since).items(5)
+# tweets = tw.Cursor(api.search,
+#               q=search_words,
+#               lang="en",
+#               since=date_since).items(5)
 
-# Iterate and print tweets
+# # Iterate and print tweets
+# for tweet in tweets:
+#     print(tweet.text)
+
+# Collect a list of tweets
+# tweet_collection = [tweet.text for tweet in tweets]
+# print(tweet_collection)
+
+# Use -filter:retweets to filter out retweets
+new_search = search_words + " -filter:retweets"
+
+tweets = tw.Cursor(api.search,
+                       q=new_search,
+                       lang="en",
+                       since=date_since).items(5)
+
 for tweet in tweets:
     print(tweet.text)
 
+# Who's tweeting about cats?
