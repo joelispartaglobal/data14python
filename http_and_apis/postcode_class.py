@@ -14,10 +14,16 @@ class Postcode:
     def result(self):
         return self.req_response.json()['result']
 
+    # Create a method to print the details relating to the post code
+    def post_details(self):
+        for postcode in self.req_response.json()['result']:
+            result = postcode['result']
+            print(f"Postcode: {result['postcode']}; Eastings: {result['eastings']};\ Northings: {result['northings']}; NUTS code: {result['codes']['nuts']}")
+
 
 if __name__ == "__main__":
     test = Postcode()
-
+    print(test.post_details())
 # You dont always have to assign a variable to a method
 # You can create the instance of the object but you are not storing it
 # You are defining something then dropping it
