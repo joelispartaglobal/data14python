@@ -1,15 +1,88 @@
 things to research:
 
 HTTP - what it is, how it works, request structure
+HTTP stands for Hyper Text Transfer Protocol
+It communicates information between client computers and web servers done by sending and receiving
+HTTP requests and processes.
+Client sends HTTP request to the web -> Web receives it
+Server runs an application to process the request
+Server sends an HTTP response to the client -> The client receives it
+e.g.
+Browser request an HTML page -> returns HTML
+HTML stands for hypertext markup language - standard markup language for documents designed
+to be displayed in a web browser
+
+
 REST - representational state transfer
+Architectural style for providing standards between computer systems on the web
+Makes it easier for systems to communicate with each other
+Code that is done on the client side can be changed at any time without affecting the operation
+of the server.
+And vice versa for code being changed on server side.
+As long as each side knows what format the message is sent in, they can be kept modular
+and separate.
 
 RESTful APIs
 - Representation and data flow
+The data format of a representation is known as a media type
+The media type identifies a specification that defines how a representation is to be processed
+A truly RESTful API looks like hypertext - every addressable unit carries an address explicitly
+or implicitly.
+
 - Messages
+self-descriptive messages
+A message represents an inbound or outbound message
+Includes enough information to describe how to process the message
+Should not contain additional information in a separate documentation or in another message
+Another constraint that ensures a uniform interface between clients and servers
+
+
 - Naming resources
+GET - Most often used to retrieve a resource at a given URL
+POST - Most often used to create new data on a server
+PUT - Often used for updating data
+DELETE - Used to delete resources from the server
+
 - Statelessness
+Systems that follow REST architecture dont need to know what state the client is in or vice versa
+This is called statelessness.
+
 - Caching
+Cache constraints require that the data within a response to a request to be implicitly or
+explicitly labelled as cacheable or non-cacheable
+If a response is labelled as cacheable then the client cache is given the right to reuse that
+response data for later, equivalent requests.
+advantage - potential to partially or completely eliminate some interactions improving
+efficiency, scalability and user-perceived performance.
 
 SOLID OOP Principles
+There are five concepts that make SOLID principles
+
+Single Responsibility principle
+It's purpose is to have a single responsibility for a class/module
+The class/module should solve one and only one problem
+
+Open/Closed principle
+A existing and well-tested class should not be modified when a new feature needs to be built
+It may introduce a new bug when we modify an existing class to make a new feature
+So rather than changing an existing class/interface, we should extend that class/interface
+in a new class to add new features
+
+Liskov Substitution principle
+Named after Barbara Liskov and she introduced this principle in 1987
+The concept states that a subtype must be substitutable to base types without breaking
+the behaviour
+Behavourial subtyping
+
+Interface Segregation principle
+This principle states that an interface should not enforce unwanted methods to a class
+Instead of one large interface, we should have smaller interfaces
+Do not create an interface with many methods, if we do, break it into smaller interfaces
+
+Dependency Inversion principle
+Higher level classes should not depend on lower level classes but abstractions
+Higher level classes should not need to know the implementation details of the lower-level
+class and the lower level class should be hidden behind an abstraction
+
 
 
