@@ -76,3 +76,4 @@ def import_json():
 load_pilots()
 pilot_name()
 
+# after dealing with one starship document, insert one
